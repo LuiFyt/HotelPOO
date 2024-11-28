@@ -2,23 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.com.visao.reserva;
+package br.com.visao.cliente;
 
-import br.com.controle.Reserva;
-import br.com.entidade.ManterReserva;
-import java.util.ArrayList;
+import br.com.controle.Cliente;
+import br.com.entidade.ManterCliente;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
 
 /**
  *
  * @author LuiF
  */
-public class RelatarReservas extends javax.swing.JFrame {
+public class RelatarCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form RelatarReservas
+     * Creates new form RelatarCliente
      */
-    public RelatarReservas() {
+    public RelatarCliente() {
         initComponents();
     }
 
@@ -31,11 +31,37 @@ public class RelatarReservas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTreservas = new javax.swing.JTable();
+        jTclientes = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jTclientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Código", "Nome", "CPF", "Data de Nascimento"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTclientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTclientesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTclientes);
 
         jButton1.setText("Imprimir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -44,41 +70,22 @@ public class RelatarReservas extends javax.swing.JFrame {
             }
         });
 
-        jTreservas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Código", "Código do Cliente", "Número de Pessoas", "Tempo de Estadia", "Número do Quarto"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTreservas);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -89,24 +96,28 @@ public class RelatarReservas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTclientesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTclientesMouseClicked
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            Reserva r = new Reserva();
-            ManterReserva dao = new ManterReserva();
-            DefaultTableModel reserva = (DefaultTableModel) jTreservas.getModel();
-            reserva.setRowCount(0);
+            Cliente c = new Cliente();
+            ManterCliente dao = new ManterCliente();
+            DefaultTableModel cliente = (DefaultTableModel) jTclientes.getModel();
+            cliente.setRowCount(0);
             {
-                ArrayList<Reserva> reservas = dao.PesquisarReserva();
-                for (int i = 0; i < reservas.size(); i++) {
-                    r = reservas.get(i);
-                    reserva.addRow(new Object[]{r.getCodigo(), r.getCodigoDoCliente(), r.getNumeroDePessoas(), r.getTempoDeEstadia(), r.getNumeroDoQuarto()});
-                    System.out.println("r" + r.getCodigo() + r.getCodigoDoCliente() + r.getNumeroDePessoas() + r.getTempoDeEstadia() + r.getNumeroDoQuarto());
+                ArrayList<Cliente> clientes = dao.PesquisarCliente();
+                for (int i = 0; i < clientes.size(); i++) {
+                    c = clientes.get(i);
+                    cliente.addRow(new Object[]{c.getCodigo(), c.getNome(), c.getCPF(), c.getDataNascimento()});
+                    System.out.println("c" + c.getCodigo() + c.getNome() + c.getCPF() + c.getDataNascimento());
                 }
             }
         } catch (Exception e) {
             System.out.println("Erro " + e.getMessage());
-        }  
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -126,21 +137,20 @@ public class RelatarReservas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RelatarReservas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RelatarReservas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RelatarReservas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RelatarReservas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RelatarReservas().setVisible(true);
+                new RelatarCliente().setVisible(true);
             }
         });
     }
@@ -148,6 +158,6 @@ public class RelatarReservas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTreservas;
+    private javax.swing.JTable jTclientes;
     // End of variables declaration//GEN-END:variables
 }

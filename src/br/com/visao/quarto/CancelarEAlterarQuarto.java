@@ -4,11 +4,8 @@
  */
 package br.com.visao.quarto;
 
-import br.com.visao.reserva.*;
-import br.com.controle.Reserva;
 import br.com.controle.Quarto;
 import br.com.entidade.ManterQuarto;
-import br.com.entidade.ManterReserva;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;

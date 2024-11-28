@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -24,7 +24,7 @@ public class DAO {
     public void abrirBanco() throws SQLException {// criando metodo para acessar o banco
       try {
         Class.forName("com.mysql.jdbc.Driver");//classe para utilização do arquivo com configurções do serivdor mysql
-        String url = "jdbc:mysql://localhost/poohotel";// drive servidor e banco de dados a serem utilizados e indicação do banco a ser utilizado
+        String url = "jdbc:mysql://localhost/hotelpoo";// drive servidor e banco de dados a serem utilizados e indicação do banco a ser utilizado
         String user ="root";// usuario do banco de dados
         String senha ="";//senha do usuario do banco de dados    
         con=(Connection) DriverManager.getConnection(url,user,senha);//metodo que usa os parametros para conectar com o banco

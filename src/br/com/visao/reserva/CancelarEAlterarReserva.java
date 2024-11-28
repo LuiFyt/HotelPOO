@@ -33,19 +33,13 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTCPF = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTdataDeNascimento = new javax.swing.JTextField();
         jTcodigo = new javax.swing.JTextField();
         jBalterar = new javax.swing.JButton();
         jTtempo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTnome = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTreservas = new javax.swing.JTable();
         jBcancelar = new javax.swing.JButton();
@@ -53,18 +47,16 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
         jCpessoas = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jTquarto = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jTcodigocliente = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jTCPF.setColumns(11);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("Tempo de Estádia:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Código da reserva");
-
-        jTdataDeNascimento.setColumns(10);
+        jLabel2.setText("Código do Cliente:");
 
         jTcodigo.setColumns(4);
         jTcodigo.addActionListener(new java.awt.event.ActionListener() {
@@ -85,38 +77,22 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel1.setText("Cancelar ou Alterar Reserva");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Nome:");
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("Data de Nascimento:");
-
-        jTnome.setColumns(20);
-        jTnome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTnomeActionPerformed(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Número de Pessoas:");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("CPF:");
-
         jTreservas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Código", "Nome", "CPF", "Data de Nascimento", "Número de Pessoas", "Número do Quarto", "Tempo de Estadia"
+                "Código da Reserva", "Código do Cliente", "Número de Pessoas", "Número do Quarto", "Tempo de Estadia"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -156,6 +132,16 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
 
         jTquarto.setColumns(4);
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setText("Código da Reserva:");
+
+        jTcodigocliente.setColumns(4);
+        jTcodigocliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTcodigoclienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -163,51 +149,50 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBimprimir)
-                        .addGap(225, 225, 225)
-                        .addComponent(jBcancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBalterar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jBimprimir)
+                                .addGap(124, 124, 124)
+                                .addComponent(jBcancelar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jBalterar))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
+                                .addGap(120, 120, 120)
+                                .addComponent(jLabel1)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
+                                .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTdataDeNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTquarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCpessoas, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTtempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTquarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(207, 207, 207))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTcodigocliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jCpessoas, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTtempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(6, 6, 6))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,34 +200,35 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTdataDeNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jCpessoas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel7)
-                    .addComponent(jTtempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jCpessoas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jTtempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jTcodigocliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jTquarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBcancelar)
                     .addComponent(jBimprimir)
+                    .addComponent(jBcancelar)
                     .addComponent(jBalterar))
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         pack();
@@ -255,13 +241,11 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
     private void jBalterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBalterarActionPerformed
         // TODO add your handling code here:
         Reserva r = new Reserva();
-        r.setNome(jTnome.getText());
-        r.setCPF(jTCPF.getText());
-        r.setDataNascimento(jTdataDeNascimento.getText());
         r.setNumeroDePessoas(Integer.valueOf(jCpessoas.getSelectedItem().toString()));
         r.setTempoDeEstadia(Integer.valueOf(jTtempo.getText()));
         r.setNumeroDoQuarto(Integer.valueOf(jTquarto.getText()));
         r.setCodigo(Integer.valueOf(jTcodigo.getText()));
+        r.setCodigoDoCliente(Integer.valueOf(jTcodigocliente.getText()));
         ManterReserva dao = new ManterReserva();
         try {
             dao.AtualizarReserva(r);
@@ -270,17 +254,13 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jBalterarActionPerformed
 
-    private void jTnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTnomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTnomeActionPerformed
-
     private void jBcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcancelarActionPerformed
         // TODO add your handling code here:
-        Reserva h = new Reserva();
-        h.setCodigo(Integer.valueOf(jTcodigo.getText()));
+        Reserva r = new Reserva();
+        r.setCodigo(Integer.valueOf(jTcodigo.getText()));
         ManterReserva dao = new ManterReserva();
         try {
-            dao.deletarReserva(h);
+            dao.deletarReserva(r);
         } catch (Exception ex) {
             Logger.getLogger(CancelarEAlterarReserva.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -291,17 +271,13 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
         DefaultTableModel tblModel = (DefaultTableModel)jTreservas.getModel();
         
         String tblCodigo = tblModel.getValueAt(jTreservas.getSelectedRow(), 0).toString();
-        String tblNome = tblModel.getValueAt(jTreservas.getSelectedRow(), 1).toString();
-        String tblCPF = tblModel.getValueAt(jTreservas.getSelectedRow(), 2).toString();
-        String tblDatadeNascimento = tblModel.getValueAt(jTreservas.getSelectedRow(), 3).toString();
-        String tblQtdPessoas = tblModel.getValueAt(jTreservas.getSelectedRow(), 4).toString();
-        String tblQuarto = tblModel.getValueAt(jTreservas.getSelectedRow(), 5).toString();
-        String tblTempo = tblModel.getValueAt(jTreservas.getSelectedRow(), 6).toString();
+        String tblCliente = tblModel.getValueAt(jTreservas.getSelectedRow(), 1).toString();
+        String tblQtdPessoas = tblModel.getValueAt(jTreservas.getSelectedRow(), 2).toString();
+        String tblQuarto = tblModel.getValueAt(jTreservas.getSelectedRow(), 3).toString();
+        String tblTempo = tblModel.getValueAt(jTreservas.getSelectedRow(), 4).toString();
         
         jTcodigo.setText(tblCodigo);
-        jTnome.setText(tblNome);
-        jTCPF.setText(tblCPF);
-        jTdataDeNascimento.setText(tblDatadeNascimento);
+        jTcodigocliente.setText(tblCliente);
         jCpessoas.setSelectedItem(tblQtdPessoas);
         jTquarto.setText(tblQuarto);
         jTtempo.setText(tblTempo);        
@@ -318,8 +294,8 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
                 ArrayList<Reserva> reservas = dao.PesquisarReserva();
                 for (int i = 0; i < reservas.size(); i++) {
                     r = reservas.get(i);
-                    hospede.addRow(new Object[]{r.getCodigo(), r.getNome(), r.getCPF(), r.getDataNascimento(), r.getNumeroDePessoas(), r.getNumeroDoQuarto(), r.getTempoDeEstadia()});
-                    System.out.println("r" + r.getCodigo() + r.getNome() + r.getCPF() + r.getDataNascimento() + r.getNumeroDePessoas() + r.getNumeroDoQuarto() + r.getTempoDeEstadia());
+                    hospede.addRow(new Object[]{r.getCodigo(), r.getCodigoDoCliente(), r.getNumeroDePessoas(), r.getNumeroDoQuarto(), r.getTempoDeEstadia()});
+                    System.out.println("r" + r.getCodigo() + r.getCodigoDoCliente() + r.getNumeroDePessoas() + r.getNumeroDoQuarto() + r.getTempoDeEstadia());
                 }
             }
         } catch (Exception e) {
@@ -330,6 +306,10 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
     private void jCpessoasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCpessoasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCpessoasActionPerformed
+
+    private void jTcodigoclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTcodigoclienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTcodigoclienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -374,17 +354,13 @@ public class CancelarEAlterarReserva extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jCpessoas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTCPF;
     private javax.swing.JTextField jTcodigo;
-    private javax.swing.JTextField jTdataDeNascimento;
-    private javax.swing.JTextField jTnome;
+    private javax.swing.JTextField jTcodigocliente;
     private javax.swing.JTextField jTquarto;
     private javax.swing.JTable jTreservas;
     private javax.swing.JTextField jTtempo;

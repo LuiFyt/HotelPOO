@@ -4,7 +4,7 @@
  */
 package br.com.entidade;
 
-import br.com.controle.Quarto;
+import br.com.controle.Cliente;
 import br.com.controle.Reserva;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,18 +18,16 @@ import javax.swing.JOptionPane;
 public class ManterReserva extends DAO {
     
     //metodo para inserir reserva
-    public void inserirReserva(Reserva r) throws Exception {
+    public void inserirReserva(Reserva r, int cpf) throws Exception {
         try {
         abrirBanco();
-        String query = "INSERT INTO reserva(id_reserva,nome_hospede,CPF,dataDeNascimento,qtdPessoas,tempoDeEstadia,id_quarto) "
-            + "values(null,?,?,?,?,?,?)";
+        String query = "INSERT INTO reserva(id_reserva,qtdPessoas,tempoDeEstadia,id_quarto,id_cliente) "
+            + "values(null,?,?,?,?)";
         pst=(PreparedStatement) con.prepareStatement(query);
-        pst.setString(1, r.getNome());
-        pst.setString(2, r.getCPF());
-        pst.setString(3, r.getDataNascimento());
-        pst.setInt(4, r.getNumeroDePessoas());
-        pst.setInt(5, r.getTempoDeEstadia());
-        pst.setInt(6, r.getNumeroDoQuarto());
+        pst.setInt(1, r.getNumeroDePessoas());
+        pst.setInt(2, r.getTempoDeEstadia());
+        pst.setInt(3, r.getNumeroDoQuarto());
+        pst.setInt(4, cpf);
         pst.execute();
         fecharBanco();
         } catch (Exception e) {
@@ -51,20 +49,18 @@ public class ManterReserva extends DAO {
        ArrayList<Reserva> reservas = new ArrayList<Reserva>();
          try{
          abrirBanco();  
-         String query = "select r.id_reserva, r.nome_hospede, r.CPF, r.dataDeNascimento, r.qtdPessoas, r.tempoDeEstadia, q.id_quarto from reserva as r JOIN quarto as q "
-                 + "on (r.id_quarto = q.id_quarto) order by id_reserva;";
+         String query = "select r.id_reserva, c.id_cliente, r.tempoDeEstadia, q.id_quarto, r.qtdPessoas from reserva as r JOIN quarto as q on (r.id_quarto = q.id_quarto)"
+                 + "JOIN cliente as c on (r.id_cliente = c.id_cliente) order by id_reserva;";
          pst = (PreparedStatement) con.prepareStatement(query);
          ResultSet tr = pst.executeQuery();
          Reserva r;
          while (tr.next()){               
            r = new Reserva();
            r.setCodigo(tr.getInt("id_reserva"));
-           r.setNome(tr.getString("nome_hospede"));
-           r.setCPF(tr.getString("cpf"));
-           r.setDataNascimento(tr.getString("dataDeNascimento"));
            r.setNumeroDePessoas(tr.getInt("qtdPessoas"));
            r.setTempoDeEstadia(tr.getInt("tempoDeEstadia"));
            r.setNumeroDoQuarto(tr.getInt("id_quarto"));
+           r.setCodigoDoCliente(tr.getInt("id_cliente"));
            reservas.add(r);
          } 
          fecharBanco();
@@ -78,19 +74,39 @@ public class ManterReserva extends DAO {
     public void AtualizarReserva(Reserva r) throws Exception {
         try {
             abrirBanco();
-            String query = "update reserva set nome_hospede=?, cpf=?, dataDeNascimento=?, qtdPessoas=?, tempoDeEstadia=?, id_quarto=? WHERE id_reserva=?";
+            String query = "update reserva set qtdPessoas=?, tempoDeEstadia=?, id_quarto=?, id_cliente=? WHERE id_reserva=?";
             pst = (PreparedStatement) con.prepareStatement(query);
-            pst.setString(1, r.getNome());
-            pst.setString(2, r.getCPF());
-            pst.setString(3, r.getDataNascimento());
-            pst.setInt(4, r.getNumeroDePessoas());
-            pst.setInt(5, r.getTempoDeEstadia());
-            pst.setInt(6, r.getNumeroDoQuarto());
-            pst.setInt(7, r.getCodigo());
+            pst.setInt(1, r.getNumeroDePessoas());
+            pst.setInt(2, r.getTempoDeEstadia());
+            pst.setInt(3, r.getNumeroDoQuarto());
+            pst.setInt(4, r.getCodigoDoCliente());
+            pst.setInt(5, r.getCodigo());
             pst.execute();
             fecharBanco();
         } catch (Exception e) {
             System.out.println("Erro " + e.getMessage());
         } 
+    }
+    
+    public int getIdByCPF(String cpf) {
+        int id = 0;
+        
+        try {
+            abrirBanco();
+            String query = "SELECT id_cliente FROM cliente WHERE cpf = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, cpf);
+            ResultSet data = pst.executeQuery();
+            
+            if (data.next() == false) throw new NullPointerException("NÃO FOI POSSIVEl ENCONTRAR USUARIO OU USUARIO NÃO EXISTE");
+			
+            id = data.getInt("id_cliente");
+            
+            fecharBanco();
+        } catch (Exception e) {
+            System.out.println("Erro " + e.getMessage());
+        }
+        
+        return id;
     }
  }

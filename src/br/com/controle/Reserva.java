@@ -11,12 +11,10 @@ package br.com.controle;
 public class Reserva {
     
     private int codigo;
-    private String nome;
-    private String CPF;
-    private String dataNascimento;
     private int numeroDePessoas;
     private int tempoDeEstadia;
     private int numeroDoQuarto;
+    private int codigoDoCliente;
 
     public int getCodigo() {
         return codigo;
@@ -24,30 +22,6 @@ public class Reserva {
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
-    }
-    
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
-    }
-
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
     }
 
     public int getNumeroDePessoas() {
@@ -72,6 +46,14 @@ public class Reserva {
 
     public void setNumeroDoQuarto(int numeroDoQuarto) {
         this.numeroDoQuarto = numeroDoQuarto;
+    }
+
+    public int getCodigoDoCliente() {
+        return codigoDoCliente;
+    }
+
+    public void setCodigoDoCliente(int codigoDoCliente) {
+        this.codigoDoCliente = codigoDoCliente;
     }
   
 }
